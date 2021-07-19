@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+</head>
+<body>
+    <h1>Plugin Demo</h1>
+
+    <p>
+        JWT: <span id="jwtspan"></span>
+    </p>
+    <p>
+        Ticket Id: <span id="ticketid"></span>
+    </p>
+    <pre id="aaaa"></pre>
+
+    <script>
+        const urlSearchParams = new URLSearchParams(window.location.search);
+        const params = Object.fromEntries(urlSearchParams.entries());
+
+        var ticket = JSON.parse(params.PassObject);
+
+        document.getElementById("jwtspan").textContent = params.jwt;
+        document.getElementById("ticketid").textContent = ticket.id;
+        document.getElementById("aaaa").textContent = params.PassObject;
+    </script>
+</body>
+</html>
